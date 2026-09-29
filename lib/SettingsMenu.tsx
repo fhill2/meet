@@ -11,6 +11,7 @@ import {
 import styles from '../styles/SettingsMenu.module.css';
 import { CameraSettings } from './CameraSettings';
 import { MicrophoneSettings } from './MicrophoneSettings';
+import { AudioSettingsProvider } from './audio/context';
 /**
  * @alpha
  */
@@ -108,7 +109,9 @@ export function SettingsMenu(props: SettingsMenuProps) {
               <>
                 <h3>Microphone</h3>
                 <section>
-                  <MicrophoneSettings />
+                  <AudioSettingsProvider>
+                    <MicrophoneSettings />
+                  </AudioSettingsProvider>
                 </section>
               </>
             )}
